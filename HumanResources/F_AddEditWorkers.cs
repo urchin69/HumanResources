@@ -13,8 +13,6 @@ namespace HumanResources
     public partial class F_AddEditWorkers : Form
     {
 
-      
-
 
         private int _workersId;
 
@@ -52,9 +50,6 @@ namespace HumanResources
             cmbPositionWork.DisplayMember = "ProfessionName";
             cmbPositionWork.ValueMember = "Id";
 
-
-
-
         }
 
 
@@ -78,10 +73,6 @@ namespace HumanResources
 
                 FillTextBoxes();
             }
-            //else
-            //{
-            //    Text = "Dodawanie pracownika";
-            //}
 
         }
 
@@ -107,7 +98,6 @@ namespace HumanResources
         {
             Close();
         }
-
 
         private void AssignIdNewWorker(List<Workers> workers)
         {
@@ -139,7 +129,6 @@ namespace HumanResources
         private void AddNewUserToList(List<Workers> workers)
         {
 
-
             var worker = new Workers
             {
        
@@ -147,8 +136,6 @@ namespace HumanResources
                 Id = _workersId,
                 FirstName = tbFirstName.Text,
                 LastName = tbLastName.Text,
-
-
 
                 WorkerStatus = (cmbWorkerStatus.SelectedItem as WorkerStatus).Id,//(cmbWorkerStatus.SelectedItem as WorkerStatus).Id,   // cmbWorkerStatus.SelectedItem.ToString(),
                
@@ -158,7 +145,6 @@ namespace HumanResources
                 PrimSalary = tbPrimSalary.Text,
                 PositionWork =(cmbPositionWork.SelectedItem as Profession).Id,   // int.Parse(cmbPositionWork.SelectedItem.ToString()),
                 Coments = tbComents.Text
-
 
             };
 

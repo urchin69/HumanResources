@@ -70,7 +70,6 @@ namespace HumanResources
         {
             var workers = _fileHelper.DeserializeFromFile();
 
-
             var selectedWorkerProfessionId = (cmbProfession.SelectedItem as Profession).Id;
             var selectedWorkerWorkerStatusId = (cmbWorkerStatus.SelectedItem as WorkerStatus).Id;
             var strLastName = txtSearchLastName.Text;
@@ -94,9 +93,6 @@ namespace HumanResources
 
             }
 
-
-
-
             dgvWorkers.DataSource = workers;
         }
 
@@ -111,7 +107,6 @@ namespace HumanResources
             var addEditWorkers = new F_AddEditWorkers(Convert.ToInt32(dgvWorkers.SelectedRows[0].Cells[0].Value));//tworzymy nowy obiekt klasy
             addEditWorkers.FormClosing += F_AddEditWorkers_FormClosing;
             addEditWorkers.ShowDialog();
-
 
             RefreshHR();
 
