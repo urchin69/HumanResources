@@ -14,7 +14,8 @@ namespace HumanResources
 
             return new List<WorkerStatus>
             {
-                new WorkerStatus {Id = 0, StatusName= defaultWorkerStatus},
+                //new WorkerStatus {Id = 0, StatusName= defaultWorkerStatus},
+                new WorkerStatus {Id = 0, StatusName= ""},
                 new WorkerStatus {Id = 1, StatusName ="Zatrudniony"},
                 new WorkerStatus {Id = 2, StatusName ="Zwolniony"},
 

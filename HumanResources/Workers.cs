@@ -14,8 +14,8 @@ namespace HumanResources
         public int WorkerStatus { get; set; }
         public DateTime DateBorn { get; set; }
         public DateTime DateGetJob { get; set; }
-        public DateTime DateFall { get; set; }
-        public string PrimSalary { get; set; }
+        public DateTime? DateFall { get; set; }
+        public decimal PrimSalary { get; set; }
         public int PositionWork { get; set; }
         public string Coments { get; set; }
 

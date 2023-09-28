@@ -42,7 +42,6 @@ namespace HumanResources
             this.label6 = new System.Windows.Forms.Label();
             this.dtpDateFall = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
-            this.tbPrimSalary = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.cmbPositionWork = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -51,6 +50,8 @@ namespace HumanResources
             this.btnCancel = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.cmbWorkerStatus = new System.Windows.Forms.ComboBox();
+            this.nudPrimSalary = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrimSalary)).BeginInit();
             this.SuspendLayout();
             // 
             // tbId
@@ -137,7 +138,7 @@ namespace HumanResources
             this.dtpDateGetJob.Name = "dtpDateGetJob";
             this.dtpDateGetJob.Size = new System.Drawing.Size(168, 20);
             this.dtpDateGetJob.TabIndex = 8;
-            this.dtpDateGetJob.Value = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.dtpDateGetJob.Value = new System.DateTime(2023, 9, 28, 0, 0, 0, 0);
             // 
             // label6
             // 
@@ -165,13 +166,6 @@ namespace HumanResources
             this.label7.Size = new System.Drawing.Size(95, 13);
             this.label7.TabIndex = 13;
             this.label7.Text = "Płaca zasadnicza:";
-            // 
-            // tbPrimSalary
-            // 
-            this.tbPrimSalary.Location = new System.Drawing.Point(121, 219);
-            this.tbPrimSalary.Name = "tbPrimSalary";
-            this.tbPrimSalary.Size = new System.Drawing.Size(98, 20);
-            this.tbPrimSalary.TabIndex = 12;
             // 
             // label8
             // 
@@ -260,11 +254,19 @@ namespace HumanResources
             this.cmbWorkerStatus.Size = new System.Drawing.Size(164, 21);
             this.cmbWorkerStatus.TabIndex = 23;
             // 
+            // nudPrimSalary
+            // 
+            this.nudPrimSalary.Location = new System.Drawing.Point(120, 218);
+            this.nudPrimSalary.Name = "nudPrimSalary";
+            this.nudPrimSalary.Size = new System.Drawing.Size(168, 20);
+            this.nudPrimSalary.TabIndex = 24;
+            // 
             // F_AddEditWorkers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.nudPrimSalary);
             this.Controls.Add(this.cmbWorkerStatus);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btnCancel);
@@ -274,7 +276,6 @@ namespace HumanResources
             this.Controls.Add(this.cmbPositionWork);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.tbPrimSalary);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dtpDateFall);
             this.Controls.Add(this.label5);
@@ -290,6 +291,8 @@ namespace HumanResources
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "F_AddEditWorkers";
             this.Text = "Dodawanie pracownika";
+            this.Load += new System.EventHandler(this.F_AddEditWorkers_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrimSalary)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -310,7 +313,6 @@ namespace HumanResources
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dtpDateFall;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox tbPrimSalary;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cmbPositionWork;
         private System.Windows.Forms.Label label9;
@@ -319,5 +321,6 @@ namespace HumanResources
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cmbWorkerStatus;
+        private System.Windows.Forms.NumericUpDown nudPrimSalary;
     }
 }

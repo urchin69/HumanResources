@@ -86,8 +86,8 @@ namespace HumanResources
 
             dtpDateBorn.Value = _workers.DateBorn;
             dtpDateGetJob.Value = _workers.DateGetJob;
-            dtpDateFall.Value = _workers.DateFall;
-            tbPrimSalary.Text = _workers.PrimSalary;
+            dtpDateFall.Value = (DateTime)_workers.DateFall;
+            nudPrimSalary.Value = _workers.PrimSalary;
 
             cmbPositionWork.SelectedItem = _workersProfession.FirstOrDefault(x => x.Id == _workers.PositionWork); //_workers.PositionWork;
 
@@ -142,7 +142,7 @@ namespace HumanResources
                 DateBorn = dtpDateBorn.Value,
                 DateGetJob = dtpDateGetJob.Value,
                 DateFall = dtpDateFall.Value,
-                PrimSalary = tbPrimSalary.Text,
+                PrimSalary = nudPrimSalary.Value,
                 PositionWork =(cmbPositionWork.SelectedItem as Profession).Id,   // int.Parse(cmbPositionWork.SelectedItem.ToString()),
                 Coments = tbComents.Text
 
@@ -154,6 +154,12 @@ namespace HumanResources
         {
             var workerWithHighestID = workers.OrderByDescending(x => x.Id).FirstOrDefault();
             _workersId = workerWithHighestID == null ? 1 : workerWithHighestID.Id + 1;
+        }
+
+        private void F_AddEditWorkers_Load(object sender, EventArgs e)
+        {
+            dtpDateGetJob.Value = DateTime.Now;
+           
         }
     }
 }

@@ -89,7 +89,7 @@ namespace HumanResources
             {
                 //workers = workers.Where(x => x.LastName.Contains "%" + strLastName + "%");
 
-                workers = workers.Where(x => x.LastName.Contains ($"{strLastName}")).ToList();
+                workers = workers.Where(x => x.LastName.ToLower().Contains ($"{strLastName.ToLower()}")).ToList();
 
             }
 

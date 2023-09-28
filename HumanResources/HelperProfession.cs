@@ -16,7 +16,8 @@ namespace HumanResources
 
             return new List<Profession>
             {
-                new Profession {Id = 0, ProfessionName= defaultProfession},
+                //new Profession {Id = 0, ProfessionName= defaultProfession},
+                new Profession {Id = 0, ProfessionName= ""},
                 new Profession {Id = 1, ProfessionName ="Hydraulik"},
                 new Profession {Id = 2, ProfessionName ="Elektryk"},
                 new Profession {Id = 3, ProfessionName ="Magazynier"},
