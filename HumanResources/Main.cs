@@ -34,6 +34,9 @@ namespace HumanResources
 
             dgvWorkers.Columns[0].HeaderText = "Numer";
 
+
+
+
         }
 
 
@@ -108,6 +111,7 @@ namespace HumanResources
             addEditWorkers.FormClosing += F_AddEditWorkers_FormClosing;
             addEditWorkers.ShowDialog();
 
+
             RefreshHR();
 
         }
@@ -123,7 +127,8 @@ namespace HumanResources
             dgvWorkers.Columns[6].HeaderText = "Data zwolnienia";
             dgvWorkers.Columns[7].HeaderText = "Płaca zasadnicza";
             dgvWorkers.Columns[8].HeaderText = "Stanowisko";
-            dgvWorkers.Columns[0].HeaderText = "Uwagi";
+            dgvWorkers.Columns[9].HeaderText = "Uwagi";
+            dgvWorkers.Columns[10].HeaderText = "Zwolniony";
 
         }
 

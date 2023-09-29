@@ -20,13 +20,17 @@ namespace HumanResources
 
         public List<WorkerStatus> _workersStatus;
         public List<Profession> _workersProfession;
+      //  public string datNow = DateTime.Now.ToShortDateString();
 
         //public List<Classes> _classes;
 
         private HelperAddEdit<List<Workers>> _fileHelper = new HelperAddEdit<List<Workers>>(Program.FilePath);
         public F_AddEditWorkers(int id = 0)//konstruktor
         {
-            InitializeComponent();
+
+           
+
+        InitializeComponent();
             _workersId = id;
 
             _workersStatus = HelperWorkerStatus.GetWorkerStatus("Brak");
@@ -37,6 +41,11 @@ namespace HumanResources
             GetWorkersData();
 
             tbFirstName.Select();
+
+            //dtpDateFall.Visible = false;
+            //lblDateFall.Visible = false;
+            //dtpDateFall.Value = DateTime.Now;
+
         }
 
         private void InitGroupsComboBox()
@@ -66,6 +75,14 @@ namespace HumanResources
                 btnAddEdit.Text = "Zapisz zmiany";
 
 
+
+                dtpDateFall.Visible = false;
+                lblDateFall.Visible = false;
+                lblDateFall.Visible = false;
+                dtpDateFall.Value = DateTime.Now;
+
+
+
                 if (_workers == null)
                 {
                     throw new Exception("Brak użytkownika o podanym Id");
@@ -78,6 +95,10 @@ namespace HumanResources
 
         private void FillTextBoxes()
         {
+
+            dtpDateFall.Visible = true;
+            lblDateFall.Visible = true;
+
             tbId.Text = _workers.Id.ToString();
             tbFirstName.Text = _workers.FirstName;
             tbLastName.Text = _workers.LastName;
@@ -86,12 +107,17 @@ namespace HumanResources
 
             dtpDateBorn.Value = _workers.DateBorn;
             dtpDateGetJob.Value = _workers.DateGetJob;
-            dtpDateFall.Value = (DateTime)_workers.DateFall;
-            nudPrimSalary.Value = _workers.PrimSalary;
-
+            nudPrimSalary.Value =_workers.PrimSalary;
             cmbPositionWork.SelectedItem = _workersProfession.FirstOrDefault(x => x.Id == _workers.PositionWork); //_workers.PositionWork;
-
             tbComents.Text = _workers.Coments;
+            cbDateFall.Checked = _workers.cbDateFall;
+
+            if (cbDateFall.Checked == true)
+            {
+                dtpDateFall.Value = (DateTime)_workers.DateFall;
+            }
+         
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -128,27 +154,44 @@ namespace HumanResources
 
         private void AddNewUserToList(List<Workers> workers)
         {
-
-            var worker = new Workers
+            if (cbDateFall.Checked ==true)
             {
-       
+                var worker = new Workers
+                {
+                    Id = _workersId,
+                    FirstName = tbFirstName.Text,
+                    LastName = tbLastName.Text,
+                    WorkerStatus = (cmbWorkerStatus.SelectedItem as WorkerStatus).Id,//(cmbWorkerStatus.SelectedItem as WorkerStatus).Id,   // cmbWorkerStatus.SelectedItem.ToString(),
+                    DateBorn = dtpDateBorn.Value,
+                    DateGetJob = dtpDateGetJob.Value,
+                    DateFall = dtpDateFall.Value,
+                    PrimSalary = nudPrimSalary.Value,
+                    PositionWork = (cmbPositionWork.SelectedItem as Profession).Id,   // int.Parse(cmbPositionWork.SelectedItem.ToString()),
+                    Coments = tbComents.Text,
+                    cbDateFall = cbDateFall.Checked
 
-                Id = _workersId,
-                FirstName = tbFirstName.Text,
-                LastName = tbLastName.Text,
-
-                WorkerStatus = (cmbWorkerStatus.SelectedItem as WorkerStatus).Id,//(cmbWorkerStatus.SelectedItem as WorkerStatus).Id,   // cmbWorkerStatus.SelectedItem.ToString(),
-               
-                DateBorn = dtpDateBorn.Value,
-                DateGetJob = dtpDateGetJob.Value,
-                DateFall = dtpDateFall.Value,
-                PrimSalary = nudPrimSalary.Value,
-                PositionWork =(cmbPositionWork.SelectedItem as Profession).Id,   // int.Parse(cmbPositionWork.SelectedItem.ToString()),
-                Coments = tbComents.Text
-
+                };
+                workers.Add(worker);
+            }
+            else
+            {
+                var worker = new Workers
+                {
+                    Id = _workersId,
+                    FirstName = tbFirstName.Text,
+                    LastName = tbLastName.Text,
+                    WorkerStatus = (cmbWorkerStatus.SelectedItem as WorkerStatus).Id,//(cmbWorkerStatus.SelectedItem as WorkerStatus).Id,   // cmbWorkerStatus.SelectedItem.ToString(),
+                    DateBorn = dtpDateBorn.Value,
+                    DateGetJob = dtpDateGetJob.Value,
+                    //DateFall = " ",
+                    PrimSalary = nudPrimSalary.Value,
+                    PositionWork = (cmbPositionWork.SelectedItem as Profession).Id,   // int.Parse(cmbPositionWork.SelectedItem.ToString()),
+                    Coments = tbComents.Text
             };
+                workers.Add(worker);
+            }
 
-            workers.Add(worker);
+         
         }
         private void AssignIdNewWorkers(List<Workers> workers)
         {

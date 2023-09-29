@@ -18,6 +18,8 @@ namespace HumanResources
         public decimal PrimSalary { get; set; }
         public int PositionWork { get; set; }
         public string Coments { get; set; }
+        public bool cbDateFall { get; set; }
+      
 
     }
 }

@@ -39,7 +39,7 @@ namespace HumanResources
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dtpDateGetJob = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblDateFall = new System.Windows.Forms.Label();
             this.dtpDateFall = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -51,6 +51,7 @@ namespace HumanResources
             this.label10 = new System.Windows.Forms.Label();
             this.cmbWorkerStatus = new System.Windows.Forms.ComboBox();
             this.nudPrimSalary = new System.Windows.Forms.NumericUpDown();
+            this.cbDateFall = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrimSalary)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,9 +108,9 @@ namespace HumanResources
             // 
             this.dtpDateBorn.CustomFormat = "";
             this.dtpDateBorn.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDateBorn.Location = new System.Drawing.Point(121, 139);
+            this.dtpDateBorn.Location = new System.Drawing.Point(124, 139);
             this.dtpDateBorn.Name = "dtpDateBorn";
-            this.dtpDateBorn.Size = new System.Drawing.Size(166, 20);
+            this.dtpDateBorn.Size = new System.Drawing.Size(163, 20);
             this.dtpDateBorn.TabIndex = 6;
             this.dtpDateBorn.Value = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             // 
@@ -140,23 +141,25 @@ namespace HumanResources
             this.dtpDateGetJob.TabIndex = 8;
             this.dtpDateGetJob.Value = new System.DateTime(2023, 9, 28, 0, 0, 0, 0);
             // 
-            // label6
+            // lblDateFall
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 198);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(85, 13);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Data zwolnienia:";
+            this.lblDateFall.AutoSize = true;
+            this.lblDateFall.Location = new System.Drawing.Point(12, 198);
+            this.lblDateFall.Name = "lblDateFall";
+            this.lblDateFall.Size = new System.Drawing.Size(85, 13);
+            this.lblDateFall.TabIndex = 11;
+            this.lblDateFall.Text = "Data zwolnienia:";
+            this.lblDateFall.Visible = false;
             // 
             // dtpDateFall
             // 
-            this.dtpDateFall.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDateFall.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDateFall.Location = new System.Drawing.Point(121, 192);
             this.dtpDateFall.Name = "dtpDateFall";
             this.dtpDateFall.Size = new System.Drawing.Size(166, 20);
             this.dtpDateFall.TabIndex = 10;
-            this.dtpDateFall.Value = new System.DateTime(9997, 12, 31, 0, 0, 0, 0);
+            this.dtpDateFall.Value = new System.DateTime(2023, 9, 29, 0, 0, 0, 0);
+            this.dtpDateFall.Visible = false;
             // 
             // label7
             // 
@@ -261,11 +264,22 @@ namespace HumanResources
             this.nudPrimSalary.Size = new System.Drawing.Size(168, 20);
             this.nudPrimSalary.TabIndex = 24;
             // 
+            // cbDateFall
+            // 
+            this.cbDateFall.AutoSize = true;
+            this.cbDateFall.Location = new System.Drawing.Point(303, 194);
+            this.cbDateFall.Name = "cbDateFall";
+            this.cbDateFall.Size = new System.Drawing.Size(222, 17);
+            this.cbDateFall.TabIndex = 25;
+            this.cbDateFall.Text = "Zaznacz aby wprowadzić datę zwolnienia";
+            this.cbDateFall.UseVisualStyleBackColor = true;
+            // 
             // F_AddEditWorkers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cbDateFall);
             this.Controls.Add(this.nudPrimSalary);
             this.Controls.Add(this.cmbWorkerStatus);
             this.Controls.Add(this.label10);
@@ -276,7 +290,7 @@ namespace HumanResources
             this.Controls.Add(this.cmbPositionWork);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblDateFall);
             this.Controls.Add(this.dtpDateFall);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dtpDateGetJob);
@@ -310,7 +324,7 @@ namespace HumanResources
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dtpDateGetJob;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblDateFall;
         private System.Windows.Forms.DateTimePicker dtpDateFall;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
@@ -322,5 +336,6 @@ namespace HumanResources
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cmbWorkerStatus;
         private System.Windows.Forms.NumericUpDown nudPrimSalary;
+        private System.Windows.Forms.CheckBox cbDateFall;
     }
 }
