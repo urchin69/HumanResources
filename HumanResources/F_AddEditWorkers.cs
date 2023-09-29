@@ -74,15 +74,6 @@ namespace HumanResources
 
                 btnAddEdit.Text = "Zapisz zmiany";
 
-
-
-                dtpDateFall.Visible = false;
-                lblDateFall.Visible = false;
-                lblDateFall.Visible = false;
-                dtpDateFall.Value = DateTime.Now;
-
-
-
                 if (_workers == null)
                 {
                     throw new Exception("Brak użytkownika o podanym Id");
@@ -98,6 +89,8 @@ namespace HumanResources
 
             dtpDateFall.Visible = true;
             lblDateFall.Visible = true;
+            cbDateFall.Visible = true;
+
 
             tbId.Text = _workers.Id.ToString();
             tbFirstName.Text = _workers.FirstName;

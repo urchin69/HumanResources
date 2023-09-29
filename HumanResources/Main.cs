@@ -34,9 +34,6 @@ namespace HumanResources
 
             dgvWorkers.Columns[0].HeaderText = "Numer";
 
-
-
-
         }
 
 
@@ -52,9 +49,6 @@ namespace HumanResources
 
         }
 
-
-
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             var addEditWorkers = new F_AddEditWorkers();
@@ -67,7 +61,6 @@ namespace HumanResources
         {
            RefreshHR();
         }
-
 
         private void RefreshHR()
         {
@@ -90,10 +83,7 @@ namespace HumanResources
 
             if (strLastName !="")
             {
-                //workers = workers.Where(x => x.LastName.Contains "%" + strLastName + "%");
-
                 workers = workers.Where(x => x.LastName.ToLower().Contains ($"{strLastName.ToLower()}")).ToList();
-
             }
 
             dgvWorkers.DataSource = workers;
@@ -110,7 +100,6 @@ namespace HumanResources
             var addEditWorkers = new F_AddEditWorkers(Convert.ToInt32(dgvWorkers.SelectedRows[0].Cells[0].Value));//tworzymy nowy obiekt klasy
             addEditWorkers.FormClosing += F_AddEditWorkers_FormClosing;
             addEditWorkers.ShowDialog();
-
 
             RefreshHR();
 

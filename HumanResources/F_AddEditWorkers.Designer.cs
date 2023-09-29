@@ -273,6 +273,7 @@ namespace HumanResources
             this.cbDateFall.TabIndex = 25;
             this.cbDateFall.Text = "Zaznacz aby wprowadzić datę zwolnienia";
             this.cbDateFall.UseVisualStyleBackColor = true;
+            this.cbDateFall.Visible = false;
             // 
             // F_AddEditWorkers
             // 
